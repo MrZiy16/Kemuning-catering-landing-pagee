@@ -4,6 +4,17 @@
 
 @section('content')
 <div class="container-fluid">
+    @php
+        $successRate = $paymentSummary['total_payments'] > 0
+            ? ($paymentSummary['paid_payments'] / $paymentSummary['total_payments']) * 100
+            : 0;
+        $pendingRate = $paymentSummary['total_payments'] > 0
+            ? ($paymentSummary['pending_payments'] / $paymentSummary['total_payments']) * 100
+            : 0;
+        $dpRate = $paymentSummary['paid_payments'] > 0
+            ? ($paymentSummary['dp_payments'] / $paymentSummary['paid_payments']) * 100
+            : 0;
+    @endphp
     {{-- Header Section --}}
     <div class="row mb-4">
         <div class="col-12">
@@ -73,10 +84,6 @@
                         <div class="flex-grow-1">
                             <h6 class="text-primary mb-2">Pembayaran Berhasil</h6>
                             <h3 class="mb-0 fw-bold text-primary">Rp {{ number_format($paymentSummary['paid_payments'], 0, ',', '.') }}</h3>
-                            @php
-                                $successRate = $paymentSummary['total_payments'] > 0 ? 
-                                    ($paymentSummary['paid_payments'] / $paymentSummary['total_payments']) * 100 : 0;
-                            @endphp
                             <small class="text-primary">{{ number_format($successRate, 1) }}% success rate</small>
                         </div>
                         <div class="flex-shrink-0">
@@ -187,7 +194,7 @@
                                             <small class="text-muted">{{ $transaction->customer->no_hp ?? '' }}</small>
                                         </div>
                                     </td>
-                                    <td>{{ $transaction->tanggal_acara->format('d/m/Y') }}</td>
+                                    <td>{{ $transaction->tanggal_acara?->format('d/m/Y') }}</td>
                                     <td class="fw-bold">Rp {{ number_format($transaction->total, 0, ',', '.') }}</td>
                                     <td class="text-success">Rp {{ number_format($transaction->total_paid, 0, ',', '.') }}</td>
                                     <td class="text-danger fw-bold">Rp {{ number_format($transaction->remaining_amount, 0, ',', '.') }}</td>
@@ -273,10 +280,6 @@
                         </div>
                     </div>
                     <div class="mb-3">
-                        @php
-                            $pendingRate = $paymentSummary['total_payments'] > 0 ? 
-                                ($paymentSummary['pending_payments'] / $paymentSummary['total_payments']) * 100 : 0;
-                        @endphp
                         <div class="d-flex justify-content-between">
                             <span>Pending Rate</span>
                             <span class="fw-bold">{{ number_format($pendingRate, 1) }}%</span>
@@ -286,10 +289,6 @@
                         </div>
                     </div>
                     <div>
-                        @php
-                            $dpRate = $paymentSummary['paid_payments'] > 0 ? 
-                                ($paymentSummary['dp_payments'] / $paymentSummary['paid_payments']) * 100 : 0;
-                        @endphp
                         <div class="d-flex justify-content-between">
                             <span>DP vs Full Payment</span>
                             <span class="fw-bold">{{ number_format($dpRate, 1) }}% DP</span>
