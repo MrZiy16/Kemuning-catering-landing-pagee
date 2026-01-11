@@ -117,7 +117,12 @@
 
             <!-- Action Buttons -->
             <div class="text-center">
-                <a href="" class="btn btn-primary">Kembali ke Dashboard</a>
+                <a href="https://wa.me/6282217463605?text=Halo%20saya%20ingin%20mengonfirmasi%20pembayaran%20saya%20mengenai%20pesanan%20saya" 
+   target="_blank"
+   class="btn btn-success">
+   Konfirmasi pembayaran via WhatsApp 
+</a>
+
                 <a href="{{ route('pesanan.index') }}" class="btn btn-info">Lihat Pesanan saya</a>
                
             </div>

@@ -82,7 +82,7 @@
                             <span class="text-muted small d-block">Tanggal Acara</span>
                             <span class="fw-semibold text-dark">
                                 <i class="fas fa-calendar-alt text-primary me-1"></i>
-                                {{ $transaksi->tanggal_acara }}
+                                {{ \Carbon\Carbon::parse($transaksi->tanggal_acara)->format('d-m-Y') }} {{ $transaksi->waktu_acara}}
                             </span>
                         </div>
                         <div class="info-item">

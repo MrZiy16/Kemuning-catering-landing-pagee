@@ -47,10 +47,13 @@ class RegisteredUserController extends Controller
             'status' => 1,
         ]);
 
-        event(new Registered($user));
+        
+            $user->markEmailAsVerified();
 
-        Auth::login($user);
+    // Login user
+    Auth::login($user);
 
-        return redirect()->route('verification.notice');
+    // Redirect bebas
+    return redirect()->route('home');
     }
 }

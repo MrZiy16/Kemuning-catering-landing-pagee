@@ -295,189 +295,6 @@
             margin-right: 8px;
         }
 
-        .payment-methods {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .method-card {
-            padding: 24px;
-            border: 2px solid #e5e7eb;
-            border-radius: 16px;
-            transition: all 0.3s ease;
-            background: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .method-card:hover {
-            border-color: #4f46e5;
-            transform: translateY(-4px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-        }
-
-        .method-icon {
-            font-size: 48px;
-            margin-bottom: 16px;
-            display: block;
-        }
-
-        .method-title {
-            font-size: 20px;
-            font-weight: 700;
-            color: #1f2937;
-            margin-bottom: 8px;
-        }
-
-        .method-desc {
-            color: #6b7280;
-            font-size: 14px;
-            line-height: 1.5;
-        }
-
-        /* Manual Transfer Styles */
-        .bank-accounts {
-            display: grid;
-            gap: 20px;
-            margin-bottom: 24px;
-        }
-
-        .bank-card {
-            background: white;
-            border: 2px solid #e5e7eb;
-            border-radius: 16px;
-            padding: 24px;
-            transition: all 0.3s ease;
-        }
-
-        .bank-card:hover {
-            border-color: #0bb32cff;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-        }
-
-        .bank-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 16px;
-            padding-bottom: 16px;
-            border-bottom: 2px solid #f1f5f9;
-        }
-
-        .bank-logo {
-            font-size: 36px;
-            margin-right: 16px;
-        }
-
-        .bank-name {
-            font-size: 20px;
-            font-weight: 700;
-            color: #1f2937;
-        }
-
-        .bank-info {
-            display: grid;
-            gap: 12px;
-        }
-
-        .info-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12px;
-            background: #f9fafb;
-            border-radius: 8px;
-        }
-
-        .info-label {
-            font-size: 13px;
-            font-weight: 600;
-            color: #64748b;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .info-value {
-            font-size: 16px;
-            font-weight: 700;
-            color: #1f2937;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .copy-btn {
-            background: #0bb32cff;
-            color: white;
-            border: none;
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 12px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            font-weight: 600;
-        }
-
-        .copy-btn:hover {
-            background: #099428;
-            transform: scale(1.05);
-        }
-
-        .copy-btn:active {
-            transform: scale(0.95);
-        }
-
-        .upload-section {
-            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
-            border: 2px dashed #cbd5e1;
-            border-radius: 16px;
-            padding: 24px;
-            margin-top: 24px;
-        }
-
-        .upload-title {
-            font-size: 18px;
-            font-weight: 700;
-            color: #1f2937;
-            margin-bottom: 16px;
-        }
-
-        .file-input-wrapper {
-            position: relative;
-            margin-bottom: 16px;
-        }
-
-        .file-input-label {
-            display: block;
-            padding: 16px;
-            background: white;
-            border: 2px solid #e5e7eb;
-            border-radius: 12px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .file-input-label:hover {
-            border-color: #0bb32cff;
-            background: #f9fafb;
-        }
-
-        .file-input {
-            display: none;
-        }
-
-        .btn-submit {
-            background: #0bb32cff;
-            color: white;
-            box-shadow: 0 4px 15px rgba(11, 179, 44, 0.4);
-        }
-
-        .btn-submit:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(11, 179, 44, 0.5);
-        }
-
         @media (max-width: 768px) {
             .container {
                 margin: 10px;
@@ -507,10 +324,6 @@
             }
 
             .transaction-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .payment-methods {
                 grid-template-columns: 1fr;
             }
 
@@ -568,9 +381,6 @@
             </div>
             <div class="tab" onclick="openTab('online', event)">
                 <span>💳 Online</span>
-            </div>
-            <div class="tab" onclick="openTab('manual', event)">
-                <span>🏦 Transfer Manual</span>
             </div>
         </div>
 
@@ -644,79 +454,6 @@
                 Harga sudah termasuk biaya administrasi pembayaran sebesar Rp4.440
             </div>
         </div>
-
-        <!-- Tab content: Manual Transfer -->
-        <div id="manual" class="tab-content">
-            <div class="bank-accounts">
-                <div class="bank-card">
-                    <div class="bank-header">
-                        <div class="bank-logo">🏦</div>
-                        <div class="bank-name">Bank BRI</div>
-                    </div>
-                    <div class="bank-info">
-                        <div class="info-row">
-                            <span class="info-label">Nomor Rekening</span>
-                            <span class="info-value">
-                                <span id="bni-account">374201018053537</span>
-                                <button class="copy-btn" onclick="copyToClipboard('bni-account')">Salin</button>
-                            </span>
-                        </div>
-                        <div class="info-row">
-                            <span class="info-label">Atas Nama</span>
-                            <span class="info-value">Dwi Purwaningrum</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Upload Bukti Transfer -->
-            <div class="upload-section">
-                <div class="upload-title">📤 Upload Bukti Transfer</div>
-                <form action="{{ route('payment.manual') }}" method="POST" enctype="multipart/form-data">
-                    @csrf
-                    <input type="hidden" name="transaction_id" value="{{ $transaction->id_transaksi }}">
-
-                    <div class="form-group">
-                        <label for="payment_type_manual">Jenis Pembayaran</label>
-                        <select name="payment_type" id="payment_type_manual" required>
-                            @foreach($availableTypes as $type)
-                                <option value="{{ $type }}">
-                                    {{ $type == 'dp' ? 'Down Payment (35%)' : 'Full Payment' }}
-                                </option>
-                            @endforeach
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="amount_manual">Nominal Transfer</label>
-                        <input type="number" id="amount_manual" name="amount" value="{{ $defaultAmount }}" readonly required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="bank_name">Nama Bank</label>
-                        <select name="bank_name" id="bank_name" required>
-                            <option value="">Pilih Bank</option>
-                            <option value="BRI">BRI</option>
-                        </select>
-                    </div>
-
-                    <div class="file-input-wrapper">
-                        <label for="proof" class="file-input-label">
-                            <span id="file-name">📎 Pilih file bukti transfer (JPG, PNG, PDF max 2MB)</span>
-                        </label>
-                        <input type="file" id="proof" name="proof" class="file-input" accept="image/*,application/pdf" required onchange="updateFileName()">
-                    </div>
-
-                    <button type="submit" class="btn btn-submit">
-                        Kirim Bukti Transfer
-                    </button>
-                </form>
-            </div>
-
-            <div class="note">
-                Setelah melakukan transfer, upload bukti transfer Anda. Tim kami akan memverifikasi pembayaran dalam 1x24 jam. Pastikan nominal yang ditransfer sesuai dengan yang tertera.
-            </div>
-        </div>
     </div>
 </div>
 
@@ -730,7 +467,7 @@
     // ===== Update Total Berdasarkan Tab =====
     const totalValueEl = document.getElementById('total-value');
     const feeNote = document.getElementById('fee-note');
-    
+
     function updateTotalDisplay(mode) {
         let totalDisplay = total;
         if (mode === 'online') {
@@ -742,7 +479,7 @@
         totalValueEl.textContent = 'Rp ' + totalDisplay.toLocaleString('id-ID');
         console.log('Update total:', mode, totalDisplay); // Debug
     }
-    
+
     // ===== Handle Tabs =====
     function openTab(tabName, event) {
         let tabs = document.querySelectorAll('.tab');
@@ -753,11 +490,11 @@
 
         document.getElementById(tabName).classList.add('active');
         event.currentTarget.classList.add('active');
-        
+
         // Update total berdasarkan tab
         updateTotalDisplay(tabName);
     }
-    
+
     // Set default display saat halaman pertama kali dimuat (tab offline aktif)
     updateTotalDisplay('offline');
 
@@ -799,25 +536,6 @@
     updateAmountOnline();
     typeFieldOnline.addEventListener('change', updateAmountOnline);
 
-    // ===== Manual Transfer Payment Logic =====
-    const typeFieldManual = document.getElementById('payment_type_manual');
-    const amountFieldManual = document.getElementById('amount_manual');
-
-    function updateAmountManual() {
-        if (paymentMode === 'remaining') {
-            amountFieldManual.value = remainingAmount;
-        } else {
-            if (typeFieldManual.value === 'dp') {
-                amountFieldManual.value = minDp;
-            } else {
-                amountFieldManual.value = total;
-            }
-        }
-        amountFieldManual.readOnly = true;
-    }
-    updateAmountManual();
-    typeFieldManual.addEventListener('change', updateAmountManual);
-
     // ===== Submit Online Payment =====
     function submitOnlinePayment() {
         const form = document.getElementById('onlinePaymentForm');
@@ -844,27 +562,6 @@
         .catch(err => {
             alert("Terjadi error: " + err);
         });
-    }
-
-    // ===== Copy to Clipboard =====
-    function copyToClipboard(elementId) {
-        const text = document.getElementById(elementId).textContent;
-        navigator.clipboard.writeText(text).then(() => {
-            alert('Nomor rekening berhasil disalin!');
-        }).catch(err => {
-            console.error('Gagal menyalin:', err);
-        });
-    }
-
-    // ===== Update File Name =====
-    function updateFileName() {
-        const input = document.getElementById('proof');
-        const label = document.getElementById('file-name');
-        if (input.files && input.files[0]) {
-            label.textContent = '✅ ' + input.files[0].name;
-        } else {
-            label.textContent = '📎 Pilih file bukti transfer (JPG, PNG, PDF max 2MB)';
-        }
     }
 </script>
 <script src="https://app.midtrans.com/snap/snap.js"

@@ -33,10 +33,7 @@ class AuthenticatedSessionController extends Controller
         $user = Auth::user();
   
 
-        if (! $user->hasVerifiedEmail()) {
-            return redirect()->route('verification.notice');
-        }
-
+      
         return match ($user->role) {
             'pelanggan'   => redirect()->route('home'),
             'admin'       => redirect()->route('admin.dashboard'),

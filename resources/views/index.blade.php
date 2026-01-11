@@ -12,9 +12,10 @@
     <meta name="robots" content="index, follow">
     <meta name="language" content="Indonesian">
     <meta name="author" content="Kemuning Catering">
-    <meta name="copyright" content="© 2025 Kemuning Catering">
+    <meta name="copyright" content="© 2026 Kemuning Catering">
     <link rel="stylesheet" href="css/index.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <!-- Navigation -->
@@ -24,7 +25,7 @@
     <main id="home" class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <h1 class="hero-title">NIKMATI<br>RASA TERBAIK<br>BERSAMA KAMI</h1>
+                <h1 class="hero-title">NIKMATI<br>RASA TERBAIK<br>BERSAMA KEMUNING CATERING</h1>
                 <p class="hero-subtitle">
                     Membuat momen spesial dengan cita rasa terbaik.<br>
                     Setiap saat menjadi kenangan yang tak terlupakan.
